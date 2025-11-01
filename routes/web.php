@@ -5,7 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ArticleController;
 
 Route::get('/', function () {
-    return 'Welcome';
+    return view('welcome');
 })->name('root');
 
 Route::get('about', [PageController::class, 'about'])
@@ -23,3 +23,9 @@ Route::post('articles', [ArticleController::class, 'store'])
 
 Route::get('articles/{id}', [ArticleController::class, 'show'])
     ->name('articles.show');
+
+Route::get('articles/{id}/edit', [ArticleController::class, 'edit'])
+    ->name('articles.edit');
+
+Route::patch('articles/{id}', [ArticleController::class, 'update'])
+    ->name('articles.update');

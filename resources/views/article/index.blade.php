@@ -9,4 +9,5 @@
         </h2>
         <div>{{Str::limit($article->body, 200)}}</div>
     @endforeach
+    <h2><a href="{{ route('articles.create') }}">Создать статью</a></h2>
 @endsection
